@@ -1,0 +1,280 @@
+.abs-inner {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+}
+
+
+/*-------------------------------------------- content 写的啰嗦---------------------------------------*/
+.tj-content{
+  left: 224px;
+  top: 0px;
+  right: 0;
+  bottom:0;
+  position: absolute;
+}
+.tj-content-inner {
+  left:0px;
+  top:0px;
+  right:0px;
+  bottom:0px;
+  position: absolute;
+  background-color: #ffffff;
+}
+.tj-content-outer{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  overflow: auto;
+}
+.tj-content-padding {
+  left:10px;
+  right:10px;
+  top:10px;
+  position:absolute;
+}
+
+/*统一设置条件表单垂直间距*/
+.tj-form-item-padd{
+  margin-bottom:4px;
+}
+
+/*------------------------------------------------ 列表布局重新定义 --------------------------------*/
+.tj-grid-page{
+
+}
+
+
+/*------------------------------------------------ 自定义下拉框 ------------------------------------*/
+
+
+/*combox外框*/
+.tj-combobox-box {
+  border: 1px solid #dcdfe6;
+  border-radius: 3px;
+  width: 100%;
+  min-height: 25px;
+  flex: 1 1 auto;
+}
+
+/*combox外框*/
+.tj-combobox-box-trs {
+  border: 1px none #dcdfe6;
+  border-radius: 3px;
+  min-height: 25px;
+  width:100%;
+  background-color: #00ffff;
+}
+
+/*输入框*/
+.tj-combobox-input-sty {
+  vertical-align: middle;
+  height:25px;
+  min-height: 25px;
+  flex:auto ;
+  padding-left: 14px;
+  color:#606266 ;
+}
+
+/*下拉按钮*/
+.tj-combobox-caret {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 2px;
+  vertical-align: middle;
+  border-top: 4px solid;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+}
+
+
+
+/*-------------------------------------------- content-end ---------------------------------------*/
+/*内容标题字体sss*/
+.tj-title-font{
+  font-family: '微软雅黑 Bold', '微软雅黑';
+  font-size: 17px;
+  font-weight: bold;
+}
+
+/*一般的阴影样式*/
+.tj-shadow
+{
+  -webkit-box-shadow:2px 2px 5px #888888;
+  -moz-box-shadow: 2px 2px 5px #888888;
+  box-shadow: 2px 2px 5px #888888;
+}
+/*一般的内阴影样式*/
+.tj-shadow-inner
+{
+  -webkit-box-shadow:inset 3px 2px 3px rgba(0, 0, 0, .10) ;
+  -moz-box-shadow:inset  3px 2px  3px rgba(0, 0, 0, .10) ;
+  box-shadow:inset  3px 2px 3px rgba(0, 0, 0, .10) ;
+}
+
+/*标题菜单图标*/
+.tj-title-menu{
+  color:#909399;
+  font-weight: bold;
+  font-size:23px;
+  line-height:45px;
+  vertical-align: middle;
+}
+
+/*透明的输入框*/
+.tj-transparent-input{
+  background-color:transparent;
+  height:25px;
+  border:none;
+  outline:none;
+  vertical-align: middle;
+}
+
+/*------------------------------------ common RightMenu style -------------------------------------------*/
+
+.z-dropdown-right-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 40000;
+  display: none;
+  float: left;
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height:300px;
+  min-width: 160px;
+  padding: 5px 0;
+  margin: 2px 0 0;
+  font-size: 14px;
+  list-style: none;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, .15);
+  border-radius: 4px;
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+}
+
+.z-dropdown-right-menu.pull-right {
+  right: 0;
+  left: auto;
+}
+
+.z-dropdown-right-menu .divider {
+  height: 1px;
+  margin: 9px 0;
+  overflow: hidden;
+  background-color: #e5e5e5;
+}
+
+.z-dropdown-right-menu>li>a {
+  display: block;
+  padding: 5px 20px;
+  clear: both;
+  font-weight: normal;
+  line-height: 1.42857143;
+  color: #333;
+  white-space: nowrap;
+}
+
+.z-dropdown-right-menu>li>a:hover,
+.z-dropdown-right-menu>li>a:focus {
+  color: #ffffff;
+  text-decoration: none;
+  background-color: #007cbb;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.z-dropdown-right-menu>.active>a,
+.z-dropdown-right-menu>.active>a:hover,
+.z-dropdown-right-menu>.active>a:focus {
+  color: #fff;
+  text-decoration: none;
+  background-color: #428bca;
+  outline: 0;
+  opacity: 0.5;
+}
+
+.z-dropdown-right-menu>.disabled>a,
+.z-dropdown-right-menu>.disabled>a:hover,
+.z-dropdown-right-menu>.disabled>a:focus {
+  color: #999;
+}
+
+.z-dropdown-right-menu>.disabled>a:hover,
+.z-dropdown-right-menu>.disabled>a:focus {
+  text-decoration: none;
+  cursor: not-allowed;
+  background-color: transparent;
+  background-image: none;
+  /*filter: progid: DXImageTransform.Microsoft.gradient(enabled=false);*/
+}
+
+
+/*---------------------------------------------------------------------- * RightMenu END * -------------------------------------------*/
+
+
+/*--------------------------------------------------------- popwin ------------------------------------*/
+
+.tj-popwin-nor{
+  height:400px;
+  width:100%;
+}
+
+.tj-popwin-body {
+  top: 0px;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: absolute;
+}
+
+.tj-popwin-footer {
+  bottom: -10px;
+  height: 30px;
+  left: 0;
+  right: 0;
+  position: absolute;
+}
+
+.tj-rel-inner {
+  position: relative;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+}
+
+.tj-abs-inner {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+}
+
+/*---------------------------------------------------- temp --------------------------------------*/
+.tj-page-building{
+  width:100%;
+  height:100%;
+  position:absolute;
+  background-color: #ffffff;
+}
+
+.tj-page-building>div {
+  background-image: url("../assets/image/normal/build.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.5;
+  width:100%;
+  height:100%;
+}

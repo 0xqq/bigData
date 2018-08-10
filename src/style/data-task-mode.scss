@@ -1,0 +1,106 @@
+
+$form-borderColor:#dcdfe6 ;//边框颜色
+$form-fontColor:#606266 ;//字体颜色
+$task-theme-color:#3d6380;//任务创建主题颜色
+
+
+/*控制按钮*/
+.tj-control-font-btn {
+  font-size: 25px;
+  position: absolute;
+  vertical-align: middle;
+  line-height: 25px;
+  height: 25px;
+  top: 8px;
+  left: 24px;
+  cursor: pointer;
+  color: $task-theme-color ;
+  font-weight: bold;
+}
+
+/*svg控制按钮*/
+.tj-node-cbtn {
+  width: 16px;
+  height: 16px;
+  top:10px;
+  cursor: pointer;
+  position: absolute;
+}
+.tj-control-font-btn:hover,tj-control-font-btn:active,.tj-node-cbtn:hover,.tj-node-cbtn:active{
+  color:#abb420;
+}
+
+/*临时按钮 拼凑下新建页面*/
+.temp-img0001 {
+  @include abs-group();
+  background-image: url("../assets/image/handler/temp.png");
+  background-repeat:no-repeat;
+  background-position:center;
+  position:absolute;
+  opacity:0.8;
+}
+
+/*拖动临时窗口样式*/
+.tj-temp-drag-box{
+  width:102px;
+  height:25px;
+  border:2px solid $task-theme-color;
+  border-radius:5px;
+  position:absolute;
+  color:$task-theme-color;
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+/*节点标签样式*/
+.tj-dh-drag-lb{
+  position:absolute;
+  left:25px;
+  right:0px;
+  top:0;
+  bottom:0;
+  font-size:12px;
+  overflow:hidden;
+  word-break: keep-all;
+  /*text-overflow:ellipsis;*/
+  white-space:nowrap;
+  overflow:hidden;
+  text-align: left;
+  height:25px;
+  line-height: 25px;
+  vertical-align: middle;
+}
+
+.tj-dh-node{
+  background-color:#ffffff;
+  z-index:999;
+  width:102px;
+  height:25px;
+  border:2px solid $task-theme-color;
+  border-radius:5px;
+  position:absolute;
+  color:$task-theme-color;
+}
+
+.tj-dh-icon{
+  width:25px;
+  height:25px;
+  font-size:25px;
+  line-height:25px;
+  text-align: center;
+  vertical-align: middle;
+  position:absolute;
+}
+
+/*动态表单项标签*/
+.tj-diy-form-item-lb {
+  text-align: left;
+  margin-right: 3px;
+  flex:0 0 auto ;
+  height:28px ;
+  line-height:28px;
+  min-width:80px;
+  vertical-align: middle;
+  color:#7e8993 ;
+}
+

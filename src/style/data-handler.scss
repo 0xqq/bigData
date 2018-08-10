@@ -1,0 +1,229 @@
+$form-borderColor:#dcdfe6 ;//边框颜色
+$form-fontColor:#606266 ;//字体颜色
+$task-theme-color:#3d6380;//任务创建主题颜色
+
+
+/*控制按钮*/
+.tj-control-font-btn {
+  font-size: 25px;
+  position: absolute;
+  vertical-align: middle;
+  line-height: 25px;
+  height: 25px;
+  top: 8px;
+  left: 24px;
+  cursor: pointer;
+  color: $task-theme-color ;
+  font-weight: bold;
+}
+
+/*svg控制按钮*/
+.tj-node-cbtn {
+  width: 16px;
+  height: 16px;
+  top:10px;
+  cursor: pointer;
+  position: absolute;
+}
+.tj-control-font-btn:hover,tj-control-font-btn:active,.tj-node-cbtn:hover,.tj-node-cbtn:active{
+  color:#abb420;
+}
+
+/*临时按钮 拼凑下新建页面*/
+.temp-img0001 {
+  background-image: url("../assets/image/handler/temp.png");
+  background-repeat:no-repeat;
+  background-position:center;
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  opacity:0.8;
+}
+
+
+/*拖动临时窗口样式*/
+.tj-temp-drag-box{
+  width:102px;
+  height:25px;
+  border:2px solid $task-theme-color;
+  border-radius:5px;
+  position:absolute;
+  color:$task-theme-color;
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+/*局对布局内容容器手动布局*/
+.tj-content-body-box {
+  top: 0px;
+  left:0;
+  right:0;
+  bottom:0;
+  position:absolute;
+}
+
+.tj-dh-drag-lb{
+  position:absolute;
+  left:25px;
+  right:0px;
+  top:0;
+  bottom:0;
+  font-size:12px;
+  overflow:hidden;
+  word-break: keep-all;
+  /*text-overflow:ellipsis;*/
+  white-space:nowrap;
+  overflow:hidden;
+  text-align: left;
+  height:25px;
+  line-height: 25px;
+  vertical-align: middle;
+}
+
+
+.tj-dh-node{
+  background-color:#ffffff;
+  z-index:1000;
+  width:102px;
+  height:25px;
+  border:2px solid $task-theme-color;
+  border-radius:5px;
+  position:absolute;
+  color:$task-theme-color;
+}
+
+.tj-dh-icon{
+  width:25px;
+  height:25px;
+  font-size:25px;
+  line-height:25px;
+  text-align: center;
+  vertical-align: middle;
+  position:absolute;
+}
+
+/*动态表单项标签*/
+.tj-diy-form-item-lb {
+  text-align: left;
+  margin-right: 3px;
+  flex:0 0 auto ;
+  height:28px ;
+  line-height:28px;
+  min-width:80px;
+  vertical-align: middle;
+  color:#7e8993 ;
+}
+/*动态表单项标签*/
+.tj-diy-form-item-lb2 {
+  text-align: left;
+  margin-right: 3px;
+  margin-bottom:5px;
+  vertical-align: bottom;
+  width:100%;
+  flex:1 1 auto ;
+  height:28px ;
+  line-height:28px;
+}
+/*描述信息*/
+.tj-diy-form-item-desc {
+  margin-left: 10px;
+  width: 20px;
+  height: 20px;
+  background-color: #ff0000;
+  flex:0 0 auto;
+  cursor: pointer;
+}
+
+.tj-formitem-gap{
+  width:100%;
+  margin-bottom:2px;
+}
+
+/*--------------------------------------------- simple dalig -----------------------------*/
+.tj-dialog__header{
+   padding:10px;
+ }
+.tj-dialog__body{
+  color:#606266;
+  line-height:24px;
+  font-size:14px;
+  padding:10px 15px 10px 20px;
+}
+.tj-dialog__header-lb{
+  height:25px;
+  line-heigt:25px;
+  vertical-align: middle;
+  padding-left: 10px;
+}
+.tj-dialog__header-btn{
+  top:12px;
+}
+
+.el-table--mini td,.el-table--mini th{padding:2px 0}
+
+/*------------------------------------------ simp tab --------------------------------------*/
+
+.tj-tab-header {
+  width: 100%;
+  height: 30px;
+  position: relative;
+}
+
+.tj-tab-back {
+  left:0;
+  right:0;
+  top:0;
+  bottom:0;
+  position: absolute;
+  background-color: #f5f7fa;
+  border: 1px solid #dcdfe6;
+}
+
+.tj-tab-btn-con {
+  left: 2px;
+  right: 2px;
+  top: 1px;
+  bottom: 0;
+  position: absolute;
+}
+
+.tj-tab-btn{
+  min-width: 80px;
+  padding-left: 10px;
+  padding-right: 10px;
+  height:100%;
+  flex:0 0 auto;
+  cursor:pointer;
+  box-sizing: border-box;
+  background-color:rgba(0,0,0,0);
+  line-height:30px;
+  text-align: center ;
+  vertical-align: middle;
+  color:#9c9399 ;
+}
+.tj-tab-btn_sel_mid{
+  background-color: #ffffff;
+  border-left:1px solid #dcdfe6;
+  border-right:1px solid #dcdfe6;
+  color:#6699ff ;
+}
+
+.tj-tab-btn_sel_f{
+  background-color: #ffffff;
+  border-right:1px solid #dcdfe6;
+  color:#6699ff ;
+}
+
+.tj-tab-content-bor {
+  width: 100%;
+  padding: 10px 10px;
+  min-height: 50px;
+  border-bottom: 1px solid #dcdfe6;
+  border-left:1px solid #dcdfe6;
+  border-right:1px solid #dcdfe6;
+  box-sizing: border-box;
+}
+
+/*---------------------------------------end --------------------------------------*/

@@ -1,0 +1,450 @@
+
+/*---------------------------------------- 公用样式重定义 慢慢提 有时间就替换一些---------------------------------------------*/
+$global-font-style:"宋体" ;//默认字体
+$global-font-color:#000 ;//字体颜色
+$global-font-size:12px ;//字号
+$global-bg-color:#fff ;//背景色
+$global-border-color:#555555 ;//通用边框颜色
+$tj-layout-bor-cor:#e6e6e6;//通用布局边框颜色
+$-layout-bg-color:#f3f3f4 ;//布局底色
+/*---------------------------------------- nav --------------------------------*/
+$-theme-color:#0046ae; //导航主色
+$-theme-color-deep:#03359b;//导航深色
+$-theme-color-light:#6790cd;//导航高亮色
+
+$-nav-border-color:#e4e7ed ;//默认导航边框色
+$-nav-bg-color:#f5f7fa ;//默认导航背景色
+$-el-font-light-color:#409eff;//导航选中字体颜色
+/*----------------------------------------form --------------------------------*/
+$form-borderColor:#dcdfe6 ;//表单内 边框颜色
+$form-fontColor:#606266 ;//表单内 字体颜色
+
+/*--------------------------------------- menu table view -------------------------------*/
+$tj-menu-width:200px;//菜单宽度
+$tj-menu-width-mini:65px;//搜索的宽度
+$tj-menu-item-height:40px;//表格页标题高度
+
+/*------------------------------------------ btn -----------------------------------------*/
+$danger:#f56c6c;
+$primary:#409eff;
+
+/*------------------------------------------ mixin -----------------------------------------*/
+/*全布局容器*/
+@mixin ly-group($l:0,$t:0,$r:0,$b:0 ) {
+  @if ($l != false) {
+    left: $l;
+  }
+  @if ($t != false) {
+    top: $t;
+  }
+  @if ($b != false) {
+    bottom: $b;
+  }
+  @if ($r !=false) {
+    right: $r;
+  }
+}
+/*模拟el-tab样式*/
+@mixin tab-card(){
+  flex:none;
+  width: 100%;
+  height: 40px;
+  background-color:#f5f7fa;
+  overflow: hidden;
+}
+/*模拟el-tab容器*/
+@mixin tab-card-box(){
+  flex:none;
+  width: 100%;
+  height: 40px;
+  background-color:#f5f7fa;
+  border:1px solid #dcdfe6;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+/*tab内容容器*/
+@mixin tab-content(){
+  border-right: 1px solid #dcdfe6;
+  border-bottom: 1px solid #dcdfe6;
+  border-left: 1px solid #dcdfe6;
+}
+
+/*相对布局容器*/
+@mixin rel-group($l:0,$t:0,$r:0,$b:0) {
+  @include ly-group($l,$t,$r,$b);
+  position:relative;
+}
+
+/*绝对布局容器*/
+@mixin abs-group($l:0,$t:0,$r:0,$b:0 ) {
+  @include ly-group($l,$t,$r,$b );
+  position:absolute;
+}
+
+/*宽度高度设置*/
+@mixin pre-group($w:"100%",$h:"100%"){
+  width:$w ;
+  height:$h ;
+}
+/*基础 图标按钮*/
+@mixin icon-btn-base($clr,$oclr:#a0be14,$size:16px){
+  cursor:pointer;
+  color:$clr;
+  font-size:$size;
+  &:active,&:hover{
+    color:$oclr ;
+  }
+}
+/*基本变化动画*/
+@mixin transform-m($t:all,$dur:0.3s ,$func:linear,$delay:0s){
+  transition:$t $dur $func $delay;
+  -moz-transition:$t $dur $func $delay;
+  -webkit-transition:$t $dur $func $delay;
+  -o-transition:$t $dur $func $delay;
+}
+
+/*阴影*/
+@mixin shadow($xf:2px,$yf:2px,$dis:5px,$cor:rgba(0, 0, 0, .10)){
+  -webkit-box-shadow:$xf $yf $dis $cor;
+  -moz-box-shadow:$xf $yf $dis $cor;
+  box-shadow:$xf $yf $dis $cor;
+}
+/*flex布局*/
+@mixin layout-flex( $dir:column , $hor:start ,$ver:start){
+  display:flex ;
+  display: -webkit-box;  /* 老版本语法: Safari, iOS, Android browser, older WebKit browsers. */
+  display: -moz-box;     /* 老版本语法: Firefox (buggy) */
+  display: -ms-flexbox;  /* 混合版本语法: IE 10 */
+  display: -webkit-flex; /* 新版本语法: Chrome 21+ */
+
+  flex-direction: $dir;
+  -ms-flex-direction:$dir;
+
+  @if ($hor == center) {
+    justify-content:center ;
+  }
+  @if ($hor == start) {
+    justify-content:flex-start ;
+  }
+  @if ($hor == end) {
+    justify-content:flex-end ;
+  }
+  -ms-flex-pack:$hor;
+  @if ($ver == center) {
+    align-items:center;
+  }
+  @if ($ver == start) {
+    align-items:flex-start;
+  }
+  @if ($ver == end) {
+    align-items:flex-end;
+  }
+  -ms-flex-align:$ver;
+}
+/*垂直布局*/
+@mixin ver-group($hor:start ,$ver:start){
+  @include layout-flex( column , $hor  ,$ver ) ;
+}
+/*水平布局*/
+@mixin hor-group($hor:start ,$ver:center){
+  @include layout-flex( row , $hor  ,$ver ) ;
+}
+
+/*原型图表按钮*/
+@mixin round-btn($c:#4caf50,$oc:#df65f9 ,$w:32,$h:32,$isize:18px,$ic:#fff) {
+  flex: none;
+  width: $w+px;
+  height: $h+px;
+  line-height: $h+px;
+  text-align: center;
+  vertical-align: center;
+  border-radius: $h/2 +px;
+  background-color: $c;
+  cursor: pointer;
+  -webkit-box-shadow:2px 2px 5px rgba(0,0,0,.1);
+  -moz-box-shadow:2px 2px 5px rgba(0,0,0,.1);
+  box-shadow:2px 2px 5px rgba(0,0,0,.1);
+  &:hover{
+    background-color: $oc;
+  }
+  & > i {
+    font-size: $isize;
+    color: $ic;
+  }
+}
+
+/*---------------------------------------- public -----------------------------------*/
+html,
+body {
+  font-family: "微软雅黑", "Avenir", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  margin: 0 0 ;
+  padding: 0 0;
+  background-color: #fff ;
+
+  #app {
+    @include abs-group();
+    overflow: auto;
+  }
+}
+/*默认垂直布局*/
+.tj-ver-group{
+  @include ver-group( center,start) ;
+}
+/*默认水平布局*/
+.tj-hor-group{
+  @include hor-group(start,center) ;
+}
+
+/*-------------------------------------------- 左右菜单分栏 --------------------------------------*/
+.tj-menu-content{
+  @include abs-group() ;
+  .menu-content{
+    @include abs-group($tj-menu-width) ;
+    padding:10px 10px;
+    box-sizing: border-box;
+  }
+}
+/*菜单收缩的布局*/
+.tj-menu-content-mini{
+  @include abs-group($tj-menu-width-mini) ;
+  box-sizing: border-box;
+}
+
+/*---------------------------------------- normal layout -----------------------------------*/
+/*绝对布局整体尺寸*/
+.tj-abs{
+  @include abs-group( );
+}
+/*相对布局整体尺寸*/
+.tj-rel{
+  @include rel-group( );
+}
+/*按钮*/
+.tj-btn{
+  cursor:pointer;
+}
+
+/*危险按钮*/
+.tj-icon-btn-danger{
+  @include icon-btn-base($danger) ;
+}
+
+/*普通按钮*/
+.tj-icon-btn{
+  @include icon-btn-base($primary) ;
+}
+
+/*基本内容布局 垂直 表头 表单 控制按钮 表格*/
+.tj-t-c-layout{
+  //固定部分
+  .fixed-box{
+    width:100%;
+    flex:none;
+    position:relative;
+  }
+  //小尺寸间隙
+  .mini-gap{
+    flex:none;
+    height:5px;
+  }
+  //基本尺寸间隙
+  .nor-gap{
+    flex:none;
+    height:10px;
+  }
+  //搜索表单
+  .search-form {
+    width: 100%;
+    flex: none;
+    padding: 10px 10px 3px 10px;
+    box-sizing: border-box;
+    margin-bottom: 5px;
+    background-color: $-layout-bg-color;
+    border-radius: 3px;
+
+    //表单项间隙
+    .form-item-pad{
+      margin-bottom: 10px;
+    }
+    //搜索按钮位置加个间距
+    .search-btn{
+      margin-left: 25px;
+    }
+    //按钮样式
+    .btn{
+      min-width: 64px;
+    }
+  }
+
+  //控制按钮区
+  .control-btn{
+    width:100%;
+    margin-bottom: 5px;
+  }
+
+  //数据表容器
+  .table-view {
+    flex: auto;
+    width: 100%;
+    margin-bottom: 5px;
+    position: relative;
+    .table-inner{
+      @include abs-group();
+    }
+  }
+
+  /*自动撑高*/
+  .auto-view{
+    flex:none;
+    width:100%;
+  }
+}
+
+/*典型表格视图布局 高度屏内*/
+.tj-t-view-inner{
+  @include abs-group(10px,12px,10px,5px);
+  overflow: hidden;
+  .layout{
+    @extend .tj-t-c-layout ;
+    @include abs-group();
+  }
+}
+
+/*典型表格视图布局 高度自动*/
+.tj-t-auto-inner{
+  @include abs-group(0,0,0,false);
+  .layout{
+    @extend .tj-t-c-layout ;
+    @include abs-group(0,0,0,false);
+    .sub-gap{
+      margin: 10px 0 10px 0;
+    }
+  }
+}
+
+/*高度自动撑开布局*/
+.tj-t-auto-view{
+  @include abs-group();
+ /* .auto-header{
+    @include abs-group(10px,0,10px,false);
+    height:50px;
+  }*/
+  .auto-content{
+    @include abs-group(0,0px,0,0);
+    overflow: auto;
+    .auto-content-inner{
+      @include abs-group(10px,10px,10px,5px);
+
+      .head-nav{
+        @include abs-group(0,0,0,false);
+        height:50px;
+      }
+      .content-view{
+        @include abs-group(10px,50px,10px,0);
+      }
+    }
+  }
+}
+
+/*切换按钮*/
+.tj-head-nav{
+  @include abs-group(0,0,0,false);
+  height: 40px;
+  overflow: hidden;
+  .head-nav-btn{
+    @include abs-group(10px,0,10px,0);
+  }
+  .iconbtn{
+    padding-left: 10px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  .head-nav-control{
+    @include abs-group(false,false,10px,5px);
+  }
+}
+
+/**
+ * 自动增高的loading样式 temp?
+ */
+.tj-auto-loading{
+  min-height: 300px;
+}
+
+/*------------------------------------------------- pop win ------------------------------------------*/
+
+/*----------------------------------------------------------------------弹出窗口样式---------------------------------------------------------------*/
+/*直接弹出窗口 */
+.trx-win-blue {
+  width: 600px;
+  height: 420px;
+  border: 1px solid #428bca;
+  background-color: #ffffff;
+  border-radius: 5px;
+  position: absolute;
+  -webkit-box-shadow:1px 2px 10px 3px rgba(0, 0, 0, .18);
+  -moz-box-shadow:1px 2px 10px 3px rgba(0, 0, 0, .18);
+  box-shadow:1px 2px 10px 3px rgba(0, 0, 0, .18);
+
+  /*直接弹出窗口 以后用*/
+  .trx-win-blue-hd {
+    width: 100%;
+    height: 40px;
+    line-height:40px;
+    position: absolute;
+    padding:0;
+    background-color:#428bca;
+    color:#ffffff;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-bottom: 1px solid #428bca;
+
+    .trx-win-blue-tl {
+      font-size:16px;
+      padding-left: 15px
+    }
+    .trx-win-blue-cl{
+      position:absolute;
+      right:15px;
+      top:0;
+      bottom:0;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      &:hover,&:active
+      {
+        color:#f0ad4e;
+      }
+    }
+  }
+
+  .trx-win-blue-by {
+    width: 100%;
+    top: 50px;
+    bottom: 0px;
+    padding: 5px;
+    overflow: hidden;
+    position: absolute;
+    text-align: left;
+  }
+}
+.trx-win-blue-hide{
+  opacity: 0;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition: -webkit-transform .15s ease-in-out, opacity .15s ease-in-out;
+  transition: transform .15s ease-in-out, opacity .15s ease-in-out;
+}
+.trx-win-blue-show{
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+
+
+
+
